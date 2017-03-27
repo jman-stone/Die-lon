@@ -39,7 +39,7 @@ public class BaseScreen extends BaseBitmap {
 			w = bitmap.width;
 		if (h == -1)
 			h = bitmap.height;
-		Rect blitArea = new Rect(x, y, w, h).adjust(this);
+		Rect blitArea = new Rect(x, y, w, h).adjust(this);//error cuz Rect DNE
 		int blitWidth = blitArea.bottomRightCorner_X - blitArea.topLeftCorner_X;
 		
 		for (int yy = blitArea.topLeftCorner_Y; yy < blitArea.bottomRightCorner_Y; yy++) {
@@ -53,7 +53,7 @@ public class BaseScreen extends BaseBitmap {
 					this.pixels[tgt + xx] = color;
 				}
 				else {
-					this.pixels[tgt + xx] = blendPixels(this.pixels[tgt + xx], color);
+					this.pixels[tgt + xx] = blendPixels(this.pixels[tgt + xx], color);//same on 'blendPixels'
 				}
 			}
 		}
